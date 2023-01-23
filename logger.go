@@ -36,79 +36,79 @@ func New() (Logger, error) {
 	return &logger{}, nil
 }
 
-func (l *logger) log(level Level, format string, a ...any) {
-	msg := fmt.Sprintf("[%s] "+format, level.String(), a)
+func (l *logger) log(level Level, format string, a []any) {
+	msg := fmt.Sprintf("["+level.String()+"] "+format, a...)
 	fmt.Printf("%s\n", msg)
 }
 
 func (l *logger) Log(level Level, a ...any) {
-	l.log(level, format(len(a)), a...)
+	l.log(level, format(len(a)), a)
 }
 
 func (l *logger) Emerg(a ...any) {
-	l.log(Emerg, format(len(a)), a...)
+	l.log(Emerg, format(len(a)), a)
 }
 
 func (l *logger) Alert(a ...any) {
-	l.log(Alert, format(len(a)), a...)
+	l.log(Alert, format(len(a)), a)
 }
 
 func (l *logger) Crit(a ...any) {
-	l.log(Crit, format(len(a)), a...)
+	l.log(Crit, format(len(a)), a)
 }
 
 func (l *logger) Error(a ...any) {
-	l.log(Error, format(len(a)), a...)
+	l.log(Error, format(len(a)), a)
 }
 
 func (l *logger) Warning(a ...any) {
-	l.log(Warning, format(len(a)), a...)
+	l.log(Warning, format(len(a)), a)
 }
 
 func (l *logger) Notice(a ...any) {
-	l.log(Notice, format(len(a)), a...)
+	l.log(Notice, format(len(a)), a)
 }
 
 func (l *logger) Info(a ...any) {
-	l.log(Info, format(len(a)), a...)
+	l.log(Info, format(len(a)), a)
 }
 
 func (l *logger) Debug(a ...any) {
-	l.log(Debug, format(len(a)), a...)
+	l.log(Debug, format(len(a)), a)
 }
 
 func (l *logger) Logf(level Level, format string, a ...any) {
-	l.log(level, format, a...)
+	l.log(level, format, a)
 }
 
 func (l *logger) Emergf(format string, a ...any) {
-	l.log(Emerg, format, a...)
+	l.log(Emerg, format, a)
 }
 
 func (l *logger) Alertf(format string, a ...any) {
-	l.log(Alert, format, a...)
+	l.log(Alert, format, a)
 }
 
 func (l *logger) Critf(format string, a ...any) {
-	l.log(Crit, format, a...)
+	l.log(Crit, format, a)
 }
 
 func (l *logger) Errorf(format string, a ...any) {
-	l.log(Error, format, a...)
+	l.log(Error, format, a)
 }
 
 func (l *logger) Warningf(format string, a ...any) {
-	l.log(Warning, format, a...)
+	l.log(Warning, format, a)
 }
 
 func (l *logger) Noticef(format string, a ...any) {
-	l.log(Notice, format, a...)
+	l.log(Notice, format, a)
 }
 
 func (l *logger) Infof(format string, a ...any) {
-	l.log(Info, format, a...)
+	l.log(Info, format, a)
 }
 
 func (l *logger) Debugf(format string, a ...any) {
-	l.log(Debug, format, a...)
+	l.log(Debug, format, a)
 }
